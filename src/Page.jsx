@@ -6,6 +6,7 @@ import heroVideo from '/public/hero video.mp4'
 import Lottie from "lottie-react";
 import videoJson from '/public/Animated video btn.json'
 import { useEffect } from 'react';
+import products from '../public/products';
 // import Cart from './components/Cart';
 function Page({ handleCartOpen }) {
   gsap.registerPlugin(useGSAP);
@@ -72,30 +73,14 @@ function Page({ handleCartOpen }) {
       </div>
       </div>
       <section className="product-grid ">
-      <div  className="product-item">
-        <img className='main-image' src="/public/test/dtl.webp" alt="Product 1"/>
-        <img className='reveal-onhover hidden' src="/public/test/Tono_saturacion1.png" alt="Product 1"/>
-        <div className="product-details">
-          <div className='product-name'>
-          <p className='font-semibold text-sm'>WATERGUN TEE DYED QUARTZ BEIGE</p>
-          <p className='font-medium text-gray-400 text-sm'>$101,300.00</p>
-          </div>
-          <div className='input-selector hidden gap-2 flex-row w-fit items-center justify-center px-2 text-sm'>
-            <input className='border border-y border-solid px-3 border-gray-200 py-2' type="button" value="XS" />
-            <input className='border border-solid px-3 border-gray-200 py-2' type="button" value="S" />
-            <input className='border border-solid px-3 border-gray-200 py-2' type="button" value="M" />
-            <input className='border border-solid px-3 border-gray-200 py-2' type="button" value="L" />
-            <input className='border border-solid px-3 border-gray-200 py-2' type="button" value="XL" />
-          </div>
-        </div>
-      </div>
-      <div className="product-item">
-        <img className='main-image' src="/public/test/ASTROF16.jpg" alt="Product 2"/>
-        <img className='reveal-onhover hidden' src="/public/test/ASTROB16.jpg" alt="Product 1"/>
+        {products.map((products)=>(
+      <div className={`product-item ${products.status === 'sold out' ? 'sold-out' : ''}`}  data-status={products.status} key={products.id}>
+        <img className='main-image' src={products.images.mainImage} alt="Product 2"/>
+        <img className='reveal-onhover hidden' src={products.images.lastImage} alt="Product 1"/>
         <div className="product-details">
         <div className='product-name'>
-          <p className='font-semibold text-sm'>WATERGUN TEE DYED QUARTZ BEIGE</p>
-          <p className='font-medium text-gray-400 text-sm'>$101,300.00</p>
+          <p className='font-semibold text-sm'>{products.name}</p>
+          <p className='font-medium text-gray-400 text-sm'>${products.price}</p>
           </div>
           <div className='input-selector hidden gap-2 flex-row w-full items-center justify-center'>
             <input className='border border-y border-solid px-3 border-gray-200 py-2' type="button" value="XS" />
@@ -106,41 +91,15 @@ function Page({ handleCartOpen }) {
           </div>
         </div>
       </div>
-      <div className="product-item">
-        <img className='main-image' src="/public/test/COSMOSBLUEF.png" alt="Product 2"/>
-        <img className='reveal-onhover hidden' src="/public/test/COSMOSBLUEBACK.png" alt="Product 1"/>
-        <div className="product-details">
-        <div className='product-name'>
-          <p className='font-semibold text-sm'>WATERGUN TEE DYED QUARTZ BEIGE</p>
-          <p className='font-medium text-gray-400 text-sm'>$101,300.00</p>
-          </div>
-          <div className='input-selector hidden gap-2 flex-row w-full items-center justify-center'>
-            <input className='border border-y border-solid px-3 border-gray-200 py-2' type="button" value="XS" />
-            <input className='border border-solid px-3 border-gray-200 py-2' type="button" value="S" />
-            <input className='border border-solid px-3 border-gray-200 py-2' type="button" value="M" />
-            <input className='border border-solid px-3 border-gray-200 py-2' type="button" value="L" />
-            <input className='border border-solid px-3 border-gray-200 py-2' type="button" value="XL" />
-          </div>
-        </div>
-      </div>
-      <div className="product-item">
-        <img className='main-image' src="/public/test/dtl.webp" alt="Product 2"/>
-        <img className='reveal-onhover hidden' src="/public/test/Tono_saturacion1.png" alt="Product 1"/>
-        <div className="product-details ">
-        <div className='product-name'>
-          <p className='font-semibold text-sm'>WATERGUN TEE DYED QUARTZ BEIGE</p>
-          <p className='font-medium text-gray-400 text-sm'>$101,300.00</p>
-          </div>
-          <div className='input-selector hidden gap-2 flex-row w-full items-center justify-center'>
-            <input className='border border-y border-solid px-3 border-gray-200 py-2' type="button" value="XS" />
-            <input className='border border-solid px-3 border-gray-200 py-2' type="button" value="S" />
-            <input className='border border-solid px-3 border-gray-200 py-2' type="button" value="M" />
-            <input className='border border-solid px-3 border-gray-200 py-2' type="button" value="L" />
-            <input className='border border-solid px-3 border-gray-200 py-2' type="button" value="XL" />
-          </div>
-        </div>
-      </div>
+
+        ))}
     </section>
+    {/* <section>
+            <div className="dock-image-wrapper flex items-center justify-center flex-col bg-white">
+                <img src="https://cdn.shopify.com/s/files/1/0039/1839/7529/files/z2.jpg?v=1717081540" alt="Image 7"/>
+                <a href="https://coldcultureworldwide.com/products/cinema-tee-black" className="dock-shop-button bg-white text-black px-3 py-3 border-solid border-black border hidden text-sm">SHOP THE LOOK</a>
+            </div>
+    </section> */}
     </div>
   )
 }

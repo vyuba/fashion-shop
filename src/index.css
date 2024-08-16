@@ -19,12 +19,13 @@
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   background-color: white;
 }
 
 .product-item {
   position: relative; /* Necessary for absolute positioning of the reveal image */
+  overflow: hidden;
 }
 
 .main-image {
@@ -43,15 +44,19 @@
 .product-item:hover .reveal-onhover {
   display: block;
 }
-.product-item:hover .input-selector {
-  display: flex;
+
+@media (min-width: 768px) {
+  .product-item:hover .input-selector {
+    display: flex;
+  }
+  .input-selector > input:hover  {
+    border:1px solid black;
+  }
+  .product-item:hover .product-name {
+    display: none;
+  }
 }
-.input-selector > input:hover  {
-  border:1px solid black;
-}
-.product-item:hover .product-name {
-  display: none;
-}
+
 
 .product-item {
   text-align: center;
@@ -64,7 +69,7 @@
 }
 
 .product-item::after {
-  content: 'new in';
+  content: attr(data-status);
   padding-inline: 10px ;
   padding-block: 5px ;
   position: absolute;
@@ -77,6 +82,29 @@
   font-weight: 700;
 }
 
+.product-item.sold-out::before {
+  content: "Sold Out";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 10; /* Ensure it sits above other content */
+  text-align: center;
+}
+
+.product-item.sold-out {
+  filter: blur(1px); 
+}
+
+.product-item.sold-out:hover::before {
+  filter: none;
+}
+
 .product-item img {
   width: 100%;
   height: auto;
@@ -87,4 +115,11 @@
   color: black;
   display: grid;
   gap: 10px;
+}
+
+.dock-image-wrapper{
+  transition: all ease-in-out 3ms;
+}
+.dock-image-wrapper:hover .dock-shop-button {
+  display: block;
 }
