@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: white;
+}
+
+.product-item {
+  position: relative; /* Necessary for absolute positioning of the reveal image */
+}
+
+.main-image {
+  display: block; /* Ensure the image displays properly */
+}
+
+.reveal-onhover {
+  object-fit: cover; /* Ensure image covers the entire area */
+  display: none; /* Hide the reveal image by default */
+}
+
+.product-item:hover .main-image {
+  display: none;
+}
+
+.product-item:hover .reveal-onhover {
+  display: block;
+}
+.product-item:hover .input-selector {
+  display: flex;
+}
+.input-selector > input:hover  {
+  border:1px solid black;
+}
+.product-item:hover .product-name {
+  display: none;
+}
+
+.product-item {
+  text-align: center;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  display: grid;
+  gap: 10px;
+  padding-block: 40px;
+  position: relative;
+}
+
+.product-item::after {
+  content: 'new in';
+  padding-inline: 10px ;
+  padding-block: 5px ;
+  position: absolute;
+  color: black;
+  border: 1px solid black;
+  text-transform: uppercase;
+  font-size: 10px;
+  top: 10px;
+  left: 7px;
+  font-weight: 700;
+}
+
+.product-item img {
+  width: 100%;
+  height: auto;
+}
+
+.product-details {
+  /* margin-top: 10px; */
+  color: black;
+  display: grid;
+  gap: 10px;
+}
