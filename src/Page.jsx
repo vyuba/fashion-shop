@@ -7,6 +7,7 @@ import Lottie from "lottie-react";
 import videoJson from '/public/Animated video btn.json'
 import { useEffect } from 'react';
 import products from '../public/products';
+import { Link } from 'react-router-dom';
 // import Cart from './components/Cart';
 function Page({ handleCartOpen }) {
   gsap.registerPlugin(useGSAP);
@@ -74,7 +75,8 @@ function Page({ handleCartOpen }) {
       </div>
       <section className="product-grid ">
         {products.map((products)=>(
-      <div className={`product-item ${products.status === 'sold out' ? 'sold-out' : ''}`}  data-status={products.status} key={products.id}>
+      <Link to={`/product/${products.id}`} key={products.id}>
+      <div className={`product-item ${products.status === 'sold out' ? 'sold-out' : ''}`}  data-status={products.status} >
         <img className='main-image' src={products.images.mainImage} alt="Product 2"/>
         <img className='reveal-onhover hidden' src={products.images.lastImage} alt="Product 1"/>
         <div className="product-details">
@@ -91,7 +93,7 @@ function Page({ handleCartOpen }) {
           </div>
         </div>
       </div>
-
+      </Link>
         ))}
     </section>
     {/* <section>

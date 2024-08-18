@@ -4,6 +4,8 @@ import Page from './Page'
 import Navbar from './components/Navbar'
 import Cart from './components/Cart'
 import { useState } from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ProductPage from './ProductPage'
 function App() {
 const[cartOpen, setCartOpen] = useState(false)
 
@@ -13,11 +15,17 @@ const handleCartOpen = () => {
 
 };
   return (
+    <Router>
     <>
-    <Navbar/>
-    <Page handleCartOpen={handleCartOpen} cartOpen={cartOpen} />
-    <Cart handleCartOpen={handleCartOpen} cartOpen={cartOpen} />
+      <Navbar />
+      <Cart handleCartOpen={handleCartOpen} cartOpen={cartOpen} />
+      
+      <Routes>
+        <Route path="/" element={<Page handleCartOpen={handleCartOpen} cartOpen={cartOpen} />} />
+        <Route path="/product/:id" element={<ProductPage />} />
+      </Routes>
     </>
+  </Router>
   )
 }
 

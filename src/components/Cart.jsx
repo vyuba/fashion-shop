@@ -4,7 +4,7 @@
 function Cart({ cartOpen,handleCartOpen }) {
 
     return (
-        <div id="slidecarthq" className={`${cartOpen ? 'translate-x-0' : 'translate-x-[-100%]'} fixed inset-0 z-[9999] h-screen  overflow-hidden `}>
+        <div id="slidecarthq" className={`${cartOpen ? 'translate-x-0' : 'translate-x-[-100%]'} fixed inset-0 z-[9999] h-screen  overflow-hidden transition-all `}>
           <div className="slidecarthq-overlay absolute inset-0 bg-black bg-opacity-50" tabIndex="0" role="button" onClick={handleCartOpen}></div>
           <div
             className="slidecarthq bg-white h-screen fixed top-0 right-0 z-[100000] flex flex-col shadow-xl"

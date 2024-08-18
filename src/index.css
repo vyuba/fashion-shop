@@ -85,21 +85,21 @@
 .product-item.sold-out::before {
   content: "Sold Out";
   position: absolute;
-  inset: 0;
-  display: flex;
+  top: 70%;
+  right: 0;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
-  color: black;
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  border-radius: 5px;
+  justify-content: center; */
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+  font-size: 0.9rem;
+  padding: 5px 20px;
   z-index: 10; /* Ensure it sits above other content */
   text-align: center;
+  font-weight: 600;
 }
 
-.product-item.sold-out {
-  filter: blur(1px); 
-}
 
 .product-item.sold-out:hover::before {
   filter: none;
