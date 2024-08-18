@@ -8,21 +8,27 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ProductPage from './ProductPage'
 function App() {
 const[cartOpen, setCartOpen] = useState(false)
+const [cartItems, setCartItems] = useState([]);
 
 const handleCartOpen = () => {
   setCartOpen(prevState => !prevState);
-  console.log('clicked', cartOpen)
-
 };
+
+const addToCart = (item) => {
+  setCartItems(prevItems => [...prevItems, item]);
+  setCartOpen(true);  // Open cart when item is added
+};
+
   return (
     <Router>
     <>
-      <Navbar />
-      <Cart handleCartOpen={handleCartOpen} cartOpen={cartOpen} />
-      
+      <Navbar handleCartOpen={handleCartOpen} />
+      <Cart handleCartOpen={handleCartOpen} cartOpen={cartOpen} 
+          onClose={() => setCartOpen(false)}
+          items={cartItems} />
       <Routes>
         <Route path="/" element={<Page handleCartOpen={handleCartOpen} cartOpen={cartOpen} />} />
-        <Route path="/product/:id" element={<ProductPage />} />
+        <Route path="/product/:id" element={<ProductPage handleCartOpen={handleCartOpen} addToCart={addToCart} />} />
       </Routes>
     </>
   </Router>

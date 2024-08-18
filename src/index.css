@@ -123,3 +123,23 @@
 .dock-image-wrapper:hover .dock-shop-button {
   display: block;
 }
+
+/* Add this CSS to your stylesheet */
+.size-disabled {
+  position: relative;
+  opacity: 0.5; /* Optional: To dim the size button */
+  pointer-events: none; /* Optional: To prevent clicking */
+
+  /* Adding the diagonal dash */
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: black; /* Color of the diagonal dash */
+    transform: rotate(-45deg);
+    transform-origin: center;
+  }
+}

@@ -1,10 +1,10 @@
 // import React from "react";
 // import gsap from 'gsap'
 // import { useGSAP } from '@gsap/react';
-function Cart({ cartOpen,handleCartOpen }) {
+function Cart({ cartOpen,handleCartOpen, items }) {
 
     return (
-        <div id="slidecarthq" className={`${cartOpen ? 'translate-x-0' : 'translate-x-[-100%]'} fixed inset-0 z-[9999] h-screen  overflow-hidden transition-all `}>
+        <div id="slidecarthq" className={`${cartOpen ? 'translate-x-0' : 'translate-x-[100%]'} fixed inset-0 z-[9999] h-screen  overflow-hidden transition-all `}>
           <div className="slidecarthq-overlay absolute inset-0 bg-black bg-opacity-50" tabIndex="0" role="button" onClick={handleCartOpen}></div>
           <div
             className="slidecarthq bg-white h-screen fixed top-0 right-0 z-[100000] flex flex-col shadow-xl"
@@ -18,7 +18,10 @@ function Cart({ cartOpen,handleCartOpen }) {
                 </svg>
               </button>
             </header>
-            <div className="flex-grow flex items-center justify-center p-8">
+            {
+              items.length === 0 ? 
+              (
+                <div className="flex-grow flex items-center justify-center p-8">
               <div className="text-center">
                 <svg
                   className="w-24 h-24 mx-auto mb-4 text-gray-400"
@@ -42,7 +45,34 @@ function Cart({ cartOpen,handleCartOpen }) {
                 </svg>
                 <p className="text-xl text-gray-600">Your cart is empty.</p>
               </div>
-            </div>
+              </div>
+              )
+              :
+              (
+                <div className="flex flex-col h-screen justify-between relative">
+                <div className="w-full flex flex-col gap-2 overflow-auto">
+                {items.map((item, index) => (
+                    <div key={index} className="cart-item flex flex-row py-4 px-3 text-black border-solid border gap-5">
+                      <img className="w-24" src={item.images.mainImage} alt={item.name} />
+                      <div>
+                        <h3 className="font-semibold">{item.name}</h3>
+                        <p>Size: {item.selectedSize}</p>
+                        <p>Quantity: {item.quantity}</p>
+                        <p>Price: <span className="text-[#1c1c1ca6] font-medium">${item.price}</span></p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                  <div className="px-3 absolute bottom-[2rem] w-full py-5  h-[200px] bg-white ">
+                    <div className="flex w-full justify-between py-2 items-center">
+                    <p className="text-black capitalize text-xl font-medium">total:</p>
+                    <p className="font-medium text-[#1c1c1ca6]">{items.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)}</p>
+                    </div>
+                    <button className="bg-black w-full py-3 font-semibold uppercase">checkout</button>
+                  </div>
+                </div>
+              )
+            }
           </div>
         </div>
       );
