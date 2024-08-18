@@ -4,8 +4,8 @@ const products = [
         name: 'watergun tee dyed quartz beige',
         price: 101300,
         images: {
-            mainImage: '../public/test/dtl.webp',
-            lastImage: '../public/test/Tono_saturacion1.png'
+            mainImage: '/test/dtl.webp',
+            lastImage: '/test/Tono_saturacion1.png'
         },
         status: 'sold out',
         sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -15,8 +15,8 @@ const products = [
         name: 'watergun tee dyed quartz beige',
         price: 101300,
         images: {
-            mainImage: '../public/test/dtl.webp',
-            lastImage: '../public/test/Tono_saturacion1.png'
+            mainImage: '/test/dtl.webp',
+            lastImage: '/test/Tono_saturacion1.png'
         },
         status: 'new in',
         sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -26,8 +26,8 @@ const products = [
         name: 'watergun tee dyed quartz beige',
         price: 101300,
         images: {
-            mainImage: '../public/test/ASTROF16.jpg',
-            lastImage: '../public/test/ASTROB16.jpg'
+            mainImage: '/test/ASTROF16.jpg',
+            lastImage: '/test/ASTROB16.jpg'
         },
         status: 'new in',
         sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -37,8 +37,8 @@ const products = [
         name: 'watergun tee dyed quartz beige',
         price: 101300,
         images: {
-            mainImage: '../public/test/COSMOSBLUEF.png',
-            lastImage: '../public/test/COSMOSBLUEBACK.png'
+            mainImage: '/test/COSMOSBLUEF.png',
+            lastImage: '/test/COSMOSBLUEBACK.png'
         },
         status: 'new in',
         sizes: ['XS', 'S', 'M', 'L', 'XL'],
