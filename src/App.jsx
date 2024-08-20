@@ -6,6 +6,8 @@ import Cart from './components/Cart'
 import { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ProductPage from './ProductPage'
+import LoaderPage from './components/Loader.jsx'
+import Portfolio from './Portfolio.jsx'
 function App() {
 const[cartOpen, setCartOpen] = useState(false)
 const [cartItems, setCartItems] = useState([]);
@@ -22,6 +24,7 @@ const addToCart = (item) => {
   return (
     <Router>
     <>
+      <LoaderPage/>
       <Navbar handleCartOpen={handleCartOpen} />
       <Cart handleCartOpen={handleCartOpen} cartOpen={cartOpen} 
           onClose={() => setCartOpen(false)}
@@ -29,6 +32,7 @@ const addToCart = (item) => {
       <Routes>
         <Route path="/" element={<Page handleCartOpen={handleCartOpen} cartOpen={cartOpen} />} />
         <Route path="/product/:id" element={<ProductPage handleCartOpen={handleCartOpen} addToCart={addToCart} />} />
+        <Route path="portfolio" element={<Portfolio/>} />
       </Routes>
     </>
   </Router>

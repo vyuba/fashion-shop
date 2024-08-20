@@ -4,6 +4,7 @@ import { useGSAP } from '@gsap/react'
 import coldCulture from '/public/new-logo-offset2.png'
 // import { useRef } from 'react'
 import ScrollTriger from 'gsap/ScrollTrigger'
+import { Link } from 'react-router-dom'
 function Navbar({handleCartOpen}) {
   gsap.registerPlugin(ScrollTriger, useGSAP)
   const tl = gsap.timeline({ paused: true });
@@ -35,7 +36,9 @@ function Navbar({handleCartOpen}) {
   return (
     <div className="w-full z-50 fixed px-4 py-3 NavbarContainer" >
         <ul className="w-full flex justify-between items-center capitalize ">
+          <Link to='/portfolio'>
             <li className='uppercase text-sm font-semibold navLinks'>collection</li>
+          </Link>
             <li className="text-xl w-32 flex items-center justify-center font-semibold uppercase">
                 <img className='logo' src={coldCulture} alt="" />
             </li>

@@ -16,10 +16,23 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+@font-face {
+  font-family: utara;
+  src: url("./Utara-Bold.woff2");
+}
+
+@font-face {
+  font-family: patino;
+  src: url("./Patinio Futura.ttf");
+}
+
+.loader-text{
+  font-family: utara;
+}
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   background-color: white;
 }
 
@@ -142,4 +155,82 @@
     transform: rotate(-45deg);
     transform-origin: center;
   }
+}
+
+
+
+.body-conatainer{
+  max-width: 1421px;
+  margin: 0 auto;
+  height: 100vh;
+  font-family: patino;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header main-content"
+    "header header main-content"
+    /* "sidebar footer main-content" */
+    "sidebar footer main-content";
+/*   grid-template-columns: 1fr 1fr; */ 
+  gap: 15px;
+  height: 100%;
+}
+@media (max-width: 767px) {
+  .body-conatainer{
+  height: 100%;
+}
+  .grid-container {
+    grid-template-areas:
+      "scroll"
+      "header"
+      "sidebar"
+      "main-content"
+      "footer";
+  }
+  .header {
+  height: 294px
+}
+  
+  .sidebar {
+  height: 294px
+}
+
+.main-content {
+  height: 984px
+}
+
+.footer {
+  height: 294px
+}
+
+}
+
+.header {
+  grid-area: header;
+  border-radius: 12px;
+  background-color: #000;
+  border: 3px #1E1E1E solid;
+}
+
+.sidebar {
+  grid-area: sidebar;
+    border-radius: 12px;
+  background-color: #000;
+  border: 3px #1E1E1E solid;
+}
+
+.main-content {
+  grid-area: main-content;
+   border-radius: 12px;
+  background-color: #000;
+  border: 3px #1E1E1E solid;
+}
+
+.footer {
+  grid-area: footer;
+   border-radius: 12px;
+  background-color: #000;
+  border: 3px #1E1E1E solid;
 }
