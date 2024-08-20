@@ -18,12 +18,12 @@
 }
 @font-face {
   font-family: utara;
-  src: url("./Utara-Bold.woff2");
+  src: url("/Utara-Bold.woff2");
 }
 
 @font-face {
   font-family: patino;
-  src: url("./Patinio Futura.ttf");
+  src: url("/Patinio Futura.ttf");
 }
 
 .loader-text{
