@@ -49,9 +49,9 @@ function Portfolio() {
         }
     )
   return (
-<div className='body-conatainer bg-stone-950 px-5 py-3'>
+<div className='body-conatainer bg-stone-950 px-2 py-3'>
     <div className=" fixed w-full z-[50] left-0 top-3 px-5">
-        <ul className="w-full flex flex-row gap-3 bg-stone-950 py-2 px-3 rounded-lg border border-solid overflow-hidden uppercase">
+        <ul className="w-full flex flex-row gap-3 bg-stone-950 py-2 px-3 rounded-lg border-[2px] border-solid overflow-hidden uppercase border-stone-800">
             <p className="box whitespace-nowrap">hire me</p>
             <p className="box whitespace-nowrap">hire me</p>
             <p className="box whitespace-nowrap">hire me</p>

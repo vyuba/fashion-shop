@@ -194,15 +194,15 @@
 }
   
   .sidebar {
-  height: 294px
+    height: fit-content
 }
 
 .main-content {
-  height: 984px
+  height: fit-content
 }
 
 .footer {
-  height: 294px
+  height: fit-content
 }
 
 }
