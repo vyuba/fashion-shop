@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import data from '../public/data.js'
 import { useState } from 'react';
+import emoji from '/2d copy.png'
 
 function Portfolio() {
     const [filter, setFilter] = useState('all');
@@ -52,37 +53,37 @@ function Portfolio() {
 <div className='body-conatainer bg-black px-2 py-3'>
     <div className=" fixed w-full z-[50] left-0 top-3 px-5">
         <ul className="w-full flex flex-row gap-8 bg-black py-2 px-3 rounded-lg border-[3px] border-solid overflow-hidden capitalize border-[#1E1E1E]">
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
-            <p className="box whitespace-nowrap">hire me today</p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
+            <p className="box whitespace-nowrap">hire me today <span className="wave">👋</span></p>
         </ul>
     </div>
     <div className="portfolio-nav z-[100] fixed top-[4.1rem] right-5">
@@ -96,7 +97,9 @@ function Portfolio() {
     </div>
     <div className=" py-2 px-2 border-solid border-[3px] bg-black  z-50 border-[#1E1E1E] fixed rounded-xl top-[4rem] right-5 menu-icon cursor-pointer"><MenuIcon/></div>
     <div className="grid-container">
-        <div className="header">Header</div>
+        <div className="header overflow-hidden grid place-items-center">
+            <img className="w-32" src={emoji} alt="" />
+        </div>
         <div className="sidebar overflow-y-auto px-3 py-3 pb-3">
         <h1 className="capitalize font-bold text-xl sticky top-0 bg-black py-2 w-full">about me</h1>
             <p>
@@ -142,7 +145,7 @@ function Portfolio() {
                                     <path d="M7.50124 9.49879C5.84374 7.84129 5.84374 5.14962 7.50124 3.48504C9.15874 1.82046 11.8504 1.82754 13.515 3.48504C15.1796 5.14254 15.1725 7.83421 13.515 9.49879" stroke="#F0F0F0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
                                 </h1>
-                                <p className="capitalize">{item.details} - {item.stack}</p>
+                                <p className="capitalize text-[14px]">{item.details} - {item.stack}</p>
                             </div>
                         </div>
                     ))
